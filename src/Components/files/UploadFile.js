@@ -76,9 +76,7 @@ class UploadFile extends Component {
             <label htmlFor="content">File description</label>
           </div>
           
-          <FileUploader
-                       
-                       
+          <FileUploader       
                        storageRef={firebase.storage().ref('files')}
                        onUploadStart={this.handleUploadStart}
                        onUploadError={this.handleUploadError}
@@ -86,9 +84,7 @@ class UploadFile extends Component {
                        onProgress={this.handleProgress}
                        
                   />
-                <div className="input-field">
-            <button className="btn pink lighten-1">Add</button>
-          </div>
+                
                
             <p>Progress: {this.state.uploadProgress}</p>
     
@@ -99,6 +95,9 @@ class UploadFile extends Component {
                 return <p>{downloadURL}</p> ;
               })}
             </div>
+            <div className="input-field">
+            <button className="btn pink lighten-1">Add</button>
+          </div>
            
         </form>
       </div>

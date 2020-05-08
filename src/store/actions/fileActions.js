@@ -9,8 +9,6 @@ export const uploadFile = (file) => {
         authorFirstName: profile.firstName,
         authorLastName: profile.lastName,
         authorId: authorId,
-        
-        
         createdAt: new Date()
       }).then(() => {
         dispatch({ type: 'UPLOAD_FILE_SUCCESS' });
