@@ -4,6 +4,10 @@ import NavBar from './Components/NavBar'
 import Dashboard from './Components/HomePage/Dashboard'
 import SignIn from './Components/auth/SignIn'
 import SignUp from './Components/auth/SignUp'
+import FileDetails from './Components/files/FileDetails'
+import UploadFile from './Components/files/UploadFile'
+import Refs from './Components/files/Uploader'
+import FilesDisplay from './Components/UserPage/FilesDisplay' 
 
 class App extends Component {
   render() {
@@ -11,11 +15,15 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          <Switch>
-            
-            <Route path='/signin' component={SignIn} />
+          <Switch> 
             <Route path='/signup' component={SignUp} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/upload' component={UploadFile} />
+            <Route path='/uploader' component={Refs} />
+            <Route exact path='/files' component={FilesDisplay} />
+            <Route exact path='/file/:id' component={FileDetails} />
             <Route path='/'component={Dashboard} />
+          
           </Switch>
         </div>
       </BrowserRouter>
