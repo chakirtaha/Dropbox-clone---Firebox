@@ -16,7 +16,8 @@ class FilesDisplay extends Component {
     return (
       <div className="dashboard container">
         <div className="row">
-          <div className="col s12 m6">
+          <div >
+          
             <FileList files={files} />
           </div>
           
@@ -30,13 +31,18 @@ const mapStateToProps = (state) => {
   // console.log(state);
   return {
     files: state.firestore.ordered.files,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    uid:state.firebase.auth.uid
   }
 }
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: 'files' }
-  ])
+  
+    firestoreConnect((mapStateToProps) => [{
+      collection: 'files',
+      where: [
+        ['authorId', '==', mapStateToProps.uid]
+      ],
+    }])
 )(FilesDisplay)

@@ -1,19 +1,20 @@
 import React from 'react'
 import FileSummary from './FileSummary'
-import { Link } from 'react-router-dom'
 
-const FileList = ({files}) => {
+
+
+const FileList = ({ files }) => {
   return (
     <div className="project-list section">
-      { files && files.map(file => {
+
+      {files && files.map(file => {
         return (
-          <Link to={'/file/' + file.id} key={file.id}>
-            <FileSummary file={file} />
-          </Link>
+          
+             <FileSummary file={file} />
         )
-      })}  
+      })}
+      
     </div>
   )
 }
-
 export default FileList

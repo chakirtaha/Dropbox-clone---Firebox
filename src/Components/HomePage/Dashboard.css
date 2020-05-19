@@ -44,6 +44,7 @@ p {
   font-size: inherit;
 }
 
-footer.page-footer {
-  margin: 0;
+.fab  {
+  
+  padding: 0 15px;
 }

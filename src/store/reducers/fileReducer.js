@@ -8,6 +8,7 @@ const fileReducer = (state = initState, action) => {
     case 'UPLOAD_FILE_ERROR':
       console.log('upload file error');
       return state;
+      
     default:
       return state;
   }

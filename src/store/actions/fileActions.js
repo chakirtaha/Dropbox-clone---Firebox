@@ -2,13 +2,15 @@ export const uploadFile = (file) => {
     return (dispatch, getState, {getFirestore}) => {
       // make async call to database
       const firestore = getFirestore();
-      const profile = getState().firebase.profile;
+      const name = getState().firebase.auth.displayName;
       const authorId = getState().firebase.auth.uid;
+      
+    
+      
       firestore.collection('files').add({
         ...file,
-        authorFirstName: profile.firstName,
-        authorLastName: profile.lastName,
         authorId: authorId,
+        name:name,
         createdAt: new Date()
       }).then(() => {
         dispatch({ type: 'UPLOAD_FILE_SUCCESS' });
@@ -17,3 +19,4 @@ export const uploadFile = (file) => {
       });
     }
   };
+  
