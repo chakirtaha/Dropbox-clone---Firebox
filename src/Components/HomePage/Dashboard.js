@@ -23,7 +23,7 @@ import M from 'materialize-css'
                 <br/><br/>
                 <h1 className="header center teal-text text-lighten-1"><i className="material-icons medium" >whatshot</i>FireBox</h1>
                 <div className="row center">
-                    <h5 className="header col s12 teal-text lighten-5">Tout ce dont les équipes ont besoin dans un endroit centralisé</h5>
+                    <h5 className="header col s12 teal-text lighten-5"> <b>Tout ce dont les équipes ont besoin dans un endroit centralisé</b></h5>
                     <h4 className="header col s12 black-text"> Firebox  est bien plus qu’un espace de stockage sécurisé pour les fichiers. C’est un espace de travail intelligent qui centralise les équipes, les outils et les contenus.</h4>
                 </div>
                 <div className="row center">
